@@ -1,7 +1,14 @@
-import { ChevronDown, Globe2 } from 'lucide-react'
+import { Globe2 } from 'lucide-react'
 import Link from 'next/link'
 
 import { TexcraLogo } from '@/components/TexcraLogo'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 import * as m from '../../../paraglide/messages.js'
 import type { Locale } from '../../../paraglide/runtime.js'
 
@@ -10,9 +17,9 @@ interface SiteHeaderProps {
   onLocaleChange: (locale: Locale) => void
 }
 
-export function SiteHeader({ locale, onLocaleChange }: SiteHeaderProps) {
+export function SiteNavbar({ locale, onLocaleChange }: SiteHeaderProps) {
   return (
-    <header className="relative z-20 flex h-[4.5rem] items-center border-b border-border bg-neon-bg px-5 sm:px-8 lg:px-20">
+    <header className="fixed top-0 left-0 right-0 z-20 flex h-[4.5rem] items-center border-b border-border bg-neon-bg px-5 sm:px-8 lg:px-20">
       <div className="mx-auto flex w-full max-w-[80rem] items-center justify-between">
         <Link aria-label="TexCra" href="/">
           <TexcraLogo />
@@ -37,20 +44,31 @@ export function SiteHeader({ locale, onLocaleChange }: SiteHeaderProps) {
         </nav>
 
         <div className="flex items-center gap-3 sm:gap-4">
-          <label className="relative flex h-9 cursor-pointer items-center gap-2 rounded-lg border border-border px-2.5 font-mono text-[0.8125rem] text-muted-foreground transition-colors hover:text-primary-foreground">
-            <Globe2 aria-hidden="true" size={14} strokeWidth={1.6} />
-            <span>{locale.toUpperCase()}</span>
-            <ChevronDown aria-hidden="true" size={12} strokeWidth={1.6} />
-            <select
+          <Select
+            onValueChange={(nextLocale) => onLocaleChange(nextLocale as Locale)}
+            value={locale}
+          >
+            <SelectTrigger
               aria-label={m.language_label({}, { locale })}
-              className="absolute inset-0 cursor-pointer opacity-0"
-              onChange={(event) => onLocaleChange(event.target.value as Locale)}
-              value={locale}
+              className="h-9 w-auto cursor-pointer gap-2 rounded-lg border-border bg-transparent px-2.5 py-0 font-mono text-[0.8125rem] text-muted-foreground shadow-none transition-colors hover:text-primary-foreground focus-visible:ring-primary/30 [&>svg:last-child]:size-3 [&>svg:last-child]:opacity-100"
             >
-              <option value="en">EN</option>
-              <option value="vi">VI</option>
-            </select>
-          </label>
+              <Globe2 aria-hidden="true" size={14} strokeWidth={1.6} />
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent
+              align="start"
+              className="min-w-[var(--radix-select-trigger-width)] border-border bg-neon-bg font-mono text-[0.8125rem] text-muted-foreground"
+              position="popper"
+              side="bottom"
+            >
+              <SelectItem className="focus:bg-primary/20 focus:text-primary-foreground" value="en">
+                EN
+              </SelectItem>
+              <SelectItem className="focus:bg-primary/20 focus:text-primary-foreground" value="vi">
+                VI
+              </SelectItem>
+            </SelectContent>
+          </Select>
 
           <Link
             className="hidden font-mono text-[0.8125rem] text-muted-foreground transition-colors hover:text-primary-foreground sm:block"

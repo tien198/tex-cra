@@ -3,11 +3,11 @@
 import { baseLocale, getLocale, setLocale, type Locale } from '../../../paraglide/runtime.js'
 import { useEffect, useSyncExternalStore } from 'react'
 
+import { SiteNavbar } from '@/sections/site-navbar'
+import { SiteFooter } from '@/sections/site-footer'
 import { ContactCta } from '@/sections/contact-cta'
 import { Hero } from '@/sections/hero'
 import { Services } from '@/sections/services'
-import { SiteFooter } from '@/sections/site-footer'
-import { SiteHeader } from '@/sections/site-header'
 import { Stats } from '@/sections/stats'
 import { Work } from '@/sections/work'
 
@@ -36,7 +36,7 @@ export default function HomePage() {
 
   return (
     <div className="texcra-home min-h-screen w-full overflow-x-hidden bg-primary-muted text-foreground">
-      <SiteHeader locale={locale} onLocaleChange={handleLocaleChange} />
+      <SiteNavbar locale={locale} onLocaleChange={handleLocaleChange} />
       <main>
         <Hero locale={locale} />
         <Services locale={locale} />
