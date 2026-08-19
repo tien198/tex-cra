@@ -1,12 +1,11 @@
+'use client'
+
+import { useLocale } from '@/hooks/useLocale'
 import * as m from '../../../paraglide/messages.js'
-import type { Locale } from '../../../paraglide/runtime.js'
 import { ServiceCard } from './comps/service-card'
 
-interface ServicesProps {
-  locale: Locale
-}
-
-export function Services({ locale }: ServicesProps) {
+export function Services() {
+  const locale = useLocale()
   const cards = [
     {
       description: m.services_card_1_description({}, { locale }),

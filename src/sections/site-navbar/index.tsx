@@ -1,3 +1,7 @@
+'use client'
+
+import { useEffect } from 'react'
+
 import { Globe2 } from 'lucide-react'
 import Link from 'next/link'
 
@@ -9,15 +13,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import { setLocale, useLocale } from '@/hooks/useLocale'
 import * as m from '../../../paraglide/messages.js'
 import type { Locale } from '../../../paraglide/runtime.js'
 
-interface SiteHeaderProps {
-  locale: Locale
-  onLocaleChange: (locale: Locale) => void
-}
-
-export function SiteNavbar({ locale, onLocaleChange }: SiteHeaderProps) {
+export function SiteNavbar() {
+  const locale = useLocale()
+  useEffect(() => {
+    document.documentElement.lang = locale
+  }, [locale])
   return (
     <header className="fixed top-0 left-0 right-0 z-20 flex h-[4.5rem] items-center border-b border-border bg-neon-bg px-5 sm:px-8 lg:px-20">
       <div className="mx-auto flex w-full max-w-[80rem] items-center justify-between">
@@ -44,10 +48,7 @@ export function SiteNavbar({ locale, onLocaleChange }: SiteHeaderProps) {
         </nav>
 
         <div className="flex items-center gap-3 sm:gap-4">
-          <Select
-            onValueChange={(nextLocale) => onLocaleChange(nextLocale as Locale)}
-            value={locale}
-          >
+          <Select onValueChange={(nextLocale) => setLocale(nextLocale as Locale)} value={locale}>
             <SelectTrigger
               aria-label={m.language_label({}, { locale })}
               className="h-9 w-auto cursor-pointer gap-2 rounded-lg border-border bg-transparent px-2.5 py-0 font-mono text-[0.8125rem] text-muted-foreground shadow-none transition-colors hover:text-primary-foreground focus-visible:ring-primary/30 [&>svg:last-child]:size-3 [&>svg:last-child]:opacity-100"

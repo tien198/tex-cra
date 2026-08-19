@@ -1,14 +1,14 @@
+'use client'
+
 import Link from 'next/link'
 
 import { TexcraLogo } from '@/components/TexcraLogo'
+import { useLocale } from '@/hooks/useLocale'
 import * as m from '../../../paraglide/messages.js'
-import type { Locale } from '../../../paraglide/runtime.js'
 
-interface SiteFooterProps {
-  locale: Locale
-}
+export function SiteFooter() {
+  const locale = useLocale()
 
-export function SiteFooter({ locale }: SiteFooterProps) {
   return (
     <footer className="flex min-h-[20.1875rem] flex-col items-center justify-center gap-6 border-t border-border bg-surface px-5 py-10 text-center">
       <Link aria-label="TexCra" href="/">

@@ -1,12 +1,11 @@
+'use client'
+
+import { useLocale } from '@/hooks/useLocale'
 import * as m from '../../../paraglide/messages.js'
-import type { Locale } from '../../../paraglide/runtime.js'
 import { StatItem } from './comps/stat-item'
 
-interface StatsProps {
-  locale: Locale
-}
-
-export function Stats({ locale }: StatsProps) {
+export function Stats() {
+  const locale = useLocale()
   const stats = [
     [m.stats_ttfb_value({}, { locale }), m.stats_ttfb_label({}, { locale })],
     [m.stats_type_safe_value({}, { locale }), m.stats_type_safe_label({}, { locale })],

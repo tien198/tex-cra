@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
+@import './scrollbar.css';
 
 @config '../../../tailwind.config.mjs';
 
@@ -135,11 +136,9 @@
   --neon-accent: oklch(65.614% 0.17263 45.422deg);
   --neon-glow: #0062ff;
   --hero-overlay: linear-gradient(180deg, rgb(0 0 0 / 6%), rgb(2 8 24 / 22%));
-  --cta-glow: radial-gradient(
-    ellipse at center,
-    color-mix(in srgb, var(--neon-glow) 20%, transparent) 0%,
-    transparent 70%
-  );
+  --cta-glow: radial-gradient(ellipse at center,
+      color-mix(in srgb, var(--neon-glow) 20%, transparent) 0%,
+      transparent 70%);
   --blueprint-grid:
     linear-gradient(color-mix(in srgb, var(--primary) 5%, transparent) 1px, transparent 1px),
     linear-gradient(90deg, color-mix(in srgb, var(--primary) 5%, transparent) 1px, transparent 1px);
@@ -282,7 +281,7 @@ html[data-theme='light'] {
   --chart-3: oklch(59.335% 0.15051 245.368deg);
 }
 
-body:has(> .texcra-home) > header.container,
-body:has(> .texcra-home) > footer {
+body:has(> .texcra-home)>header.container,
+body:has(> .texcra-home)>footer {
   display: none;
 }

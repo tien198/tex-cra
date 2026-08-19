@@ -1,12 +1,11 @@
+'use client'
+
+import { useLocale } from '@/hooks/useLocale'
 import * as m from '../../../paraglide/messages.js'
-import type { Locale } from '../../../paraglide/runtime.js'
 import { WorkCard } from './comps/work-card'
 
-interface WorkProps {
-  locale: Locale
-}
-
-export function Work({ locale }: WorkProps) {
+export function Work() {
+  const locale = useLocale()
   const projects = [
     {
       name: m.work_card_1_name({}, { locale }),

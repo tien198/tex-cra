@@ -1,11 +1,11 @@
+'use client'
+
+import { useLocale } from '@/hooks/useLocale'
 import * as m from '../../../paraglide/messages.js'
-import type { Locale } from '../../../paraglide/runtime.js'
 
-interface ContactCtaProps {
-  locale: Locale
-}
+export function ContactCta() {
+  const locale = useLocale()
 
-export function ContactCta({ locale }: ContactCtaProps) {
   return (
     <section
       className="relative flex min-h-[42.5rem] scroll-mt-16 flex-col items-center justify-center gap-6 overflow-hidden bg-neon-bg px-5 py-20 text-center sm:px-8"

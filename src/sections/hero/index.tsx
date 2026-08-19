@@ -1,11 +1,10 @@
+'use client'
+
+import { useLocale } from '@/hooks/useLocale'
 import * as m from '../../../paraglide/messages.js'
-import type { Locale } from '../../../paraglide/runtime.js'
 
-interface HeroProps {
-  locale: Locale
-}
-
-export function Hero({ locale }: HeroProps) {
+export function Hero() {
+  const locale = useLocale()
   const connector = m.hero_heading_connector({}, { locale })
 
   return (
