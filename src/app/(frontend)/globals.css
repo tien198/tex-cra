@@ -45,6 +45,11 @@
   --breakpoint-2xl: 86rem;
   --font-mono: var(--font-geist-mono);
   --font-sans: var(--font-geist-sans);
+  --font-brand-accent: var(--font-advent);
+  --font-display: var(--font-afacad);
+  --font-hero: var(--font-alumni);
+  --font-label: var(--font-abel);
+  --font-metric: var(--font-aldrich);
 }
 
 @layer utilities {
@@ -120,13 +125,24 @@
   --sidebar-accent-foreground: oklch(20.463% 0 none);
   --sidebar-border: oklch(92.191% 0 none);
   --sidebar-ring: oklch(70.9% 0 none);
+  --success: oklch(78% 0.08 200deg);
+  --warning: oklch(89% 0.1 75deg);
+  --error: oklch(75% 0.15 25deg);
+  /* custom */
   --primary-muted: oklch(95.142% 0.02503 236.824deg);
   --neon-bg: oklch(18.569% 0.04802 268.675deg);
   --surface: oklch(10.836% 0.03273 279.443deg);
   --neon-accent: oklch(65.614% 0.17263 45.422deg);
-  --success: oklch(78% 0.08 200deg);
-  --warning: oklch(89% 0.1 75deg);
-  --error: oklch(75% 0.15 25deg);
+  --neon-glow: #0062ff;
+  --hero-overlay: linear-gradient(180deg, rgb(0 0 0 / 6%), rgb(2 8 24 / 22%));
+  --cta-glow: radial-gradient(
+    ellipse at center,
+    color-mix(in srgb, var(--neon-glow) 20%, transparent) 0%,
+    transparent 70%
+  );
+  --blueprint-grid:
+    linear-gradient(color-mix(in srgb, var(--primary) 5%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--primary) 5%, transparent) 1px, transparent 1px);
 }
 
 [data-theme='dark'] {
@@ -207,6 +223,28 @@
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-error: var(--error);
+  --color-primary-muted: var(--primary-muted);
+  --color-neon-bg: var(--neon-bg);
+  --color-surface: var(--surface);
+  --color-neon-accent: var(--neon-accent);
+  --color-neon-glow: var(--neon-glow);
+  --shadow-neon-nav: 0 0 16px color-mix(in srgb, var(--neon-glow) 40%, transparent);
+  --shadow-neon-button: 0 0 32px 4px color-mix(in srgb, var(--neon-glow) 47%, transparent);
+  --shadow-neon-cta: 0 0 40px 4px color-mix(in srgb, var(--neon-glow) 53%, transparent);
+  --drop-shadow-neon-heading: 0 0 20px color-mix(in srgb, var(--neon-glow) 33%, transparent);
+  --drop-shadow-neon-metric: 0 0 12px color-mix(in srgb, var(--neon-glow) 40%, transparent);
+}
+
+@utility bg-hero-overlay {
+  background-image: var(--hero-overlay);
+}
+
+@utility bg-cta-glow {
+  background-image: var(--cta-glow);
+}
+
+@utility bg-blueprint-grid {
+  background-image: var(--blueprint-grid);
 }
 
 @layer base {
@@ -226,4 +264,25 @@ html {
 html[data-theme='dark'],
 html[data-theme='light'] {
   opacity: initial;
+}
+
+.texcra-home {
+  color-scheme: light;
+  --background: oklch(100% 0 none);
+  --foreground: oklch(14.479% 0 none);
+  --primary: oklch(50.397% 0.12809 245.46deg);
+  --primary-foreground: oklch(97.711% 0.01249 236.62deg);
+  --secondary: oklch(96.743% 0.00133 286.375deg);
+  --secondary-foreground: oklch(21.033% 0.00586 285.885deg);
+  --muted: oklch(97.015% 0 none);
+  --muted-foreground: oklch(55.553% 0 none);
+  --border: oklch(92.191% 0 none);
+  --ring: oklch(70.9% 0 none);
+  --chart-1: oklch(82.714% 0.10903 229.198deg);
+  --chart-3: oklch(59.335% 0.15051 245.368deg);
+}
+
+body:has(> .texcra-home) > header.container,
+body:has(> .texcra-home) > footer {
+  display: none;
 }

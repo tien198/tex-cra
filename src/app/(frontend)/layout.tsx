@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { cn } from '@/utilities/ui'
 import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
+import { Abel, Advent_Pro, Afacad_Flux, Aldrich, Alumni_Sans, Anton } from 'next/font/google'
 import React from 'react'
 
 import { AdminBar } from '@/components/AdminBar'
@@ -16,11 +17,60 @@ import { draftMode } from 'next/headers'
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
 
+const abel = Abel({
+  variable: '--font-abel',
+  subsets: ['latin'],
+  weight: '400',
+})
+
+const adventPro = Advent_Pro({
+  variable: '--font-advent',
+  subsets: ['latin', 'latin-ext'],
+  weight: '600',
+})
+
+const afacadFlux = Afacad_Flux({
+  variable: '--font-afacad',
+  subsets: ['latin', 'latin-ext', 'vietnamese'],
+  weight: ['300', '400', '600'],
+})
+
+const aldrich = Aldrich({
+  variable: '--font-aldrich',
+  subsets: ['latin'],
+  weight: '400',
+})
+
+const alumniSans = Alumni_Sans({
+  variable: '--font-alumni',
+  subsets: ['latin', 'latin-ext', 'vietnamese'],
+  weight: '300',
+})
+
+const anton = Anton({
+  variable: '--font-anton',
+  subsets: ['latin', 'latin-ext', 'vietnamese'],
+  weight: '400',
+})
+
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()
 
   return (
-    <html className={cn(GeistSans.variable, GeistMono.variable)} lang="en" suppressHydrationWarning>
+    <html
+      className={cn(
+        GeistSans.variable,
+        GeistMono.variable,
+        abel.variable,
+        adventPro.variable,
+        afacadFlux.variable,
+        aldrich.variable,
+        alumniSans.variable,
+        anton.variable,
+      )}
+      lang="en"
+      suppressHydrationWarning
+    >
       <head>
         <InitTheme />
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
