@@ -4,11 +4,11 @@
 @config '../../../tailwind.config.mjs';
 
 @custom-variant dark (&:is([data-theme='dark'] *));
-@custom-variant sm (@media (width >= theme(--breakpoint-sm)));
-@custom-variant md (@media (width >= theme(--breakpoint-md)));
-@custom-variant lg (@media (width >= theme(--breakpoint-lg)));
-@custom-variant xl (@media (width >= theme(--breakpoint-xl)));
-@custom-variant 2xl (@media (width >= theme(--breakpoint-2xl)));
+@custom-variant sm (@media (width >=theme(--breakpoint-sm)));
+@custom-variant md (@media (width >=theme(--breakpoint-md)));
+@custom-variant lg (@media (width >=theme(--breakpoint-lg)));
+@custom-variant xl (@media (width >=theme(--breakpoint-xl)));
+@custom-variant 2xl (@media (width >=theme(--breakpoint-2xl)));
 
 @layer base {
   h1,
@@ -87,39 +87,43 @@
 }
 
 :root {
-  --background: oklch(100% 0 0deg);
-  --foreground: oklch(14.5% 0 0deg);
-  --card: oklch(96.5% 0.005 265deg);
-  --card-foreground: oklch(14.5% 0 0deg);
-  --popover: oklch(100% 0 0deg);
-  --popover-foreground: oklch(14.5% 0 0deg);
-  --primary: oklch(20.5% 0 0deg);
-  --primary-foreground: oklch(98.5% 0 0deg);
-  --secondary: oklch(97% 0 0deg);
-  --secondary-foreground: oklch(20.5% 0 0deg);
-  --muted: oklch(97% 0 0deg);
-  --muted-foreground: oklch(55.6% 0 0deg);
-  --accent: oklch(97% 0 0deg);
-  --accent-foreground: oklch(20.5% 0 0deg);
-  --destructive: oklch(57.7% 0.245 27.325deg);
+  --background: oklch(100% 0 none);
+  --foreground: oklch(14.479% 0 none);
+  --card: oklch(100% 0 none);
+  --card-foreground: oklch(14.479% 0 none);
+  --popover: oklch(100% 0 none);
+  --popover-foreground: oklch(14.479% 0 none);
+  --primary: oklch(50.397% 0.12809 245.46deg);
+  --primary-foreground: oklch(97.711% 0.01249 236.62deg);
+  --secondary: oklch(96.743% 0.00133 286.375deg);
+  --secondary-foreground: oklch(21.033% 0.00586 285.885deg);
+  --muted: oklch(97.015% 0 none);
+  --muted-foreground: oklch(55.553% 0 none);
+  --accent: oklch(97.015% 0 none);
+  --accent-foreground: oklch(20.463% 0 none);
+  --destructive: oklch(58.304% 0.23867 28.476deg);
   --destructive-foreground: oklch(57.7% 0.245 27.325deg);
-  --border: oklch(92.2% 0 0deg);
-  --input: oklch(92.2% 0 0deg);
-  --ring: oklch(70.8% 0 0deg);
-  --chart-1: oklch(64.6% 0.222 41.116deg);
-  --chart-2: oklch(60% 0.118 184.704deg);
-  --chart-3: oklch(39.8% 0.07 227.392deg);
-  --chart-4: oklch(82.8% 0.189 84.429deg);
-  --chart-5: oklch(76.9% 0.188 70.08deg);
-  --radius: 0.625rem;
-  --sidebar: oklch(98.5% 0 0deg);
-  --sidebar-foreground: oklch(14.5% 0 0deg);
-  --sidebar-primary: oklch(20.5% 0 0deg);
-  --sidebar-primary-foreground: oklch(98.5% 0 0deg);
-  --sidebar-accent: oklch(97% 0 0deg);
-  --sidebar-accent-foreground: oklch(20.5% 0 0deg);
-  --sidebar-border: oklch(92.2% 0 0deg);
-  --sidebar-ring: oklch(70.8% 0 0deg);
+  --border: oklch(92.191% 0 none);
+  --input: oklch(92.191% 0 none);
+  --ring: oklch(70.9% 0 none);
+  --chart-1: oklch(82.714% 0.10903 229.198deg);
+  --chart-2: oklch(69.203% 0.15955 240.379deg);
+  --chart-3: oklch(59.335% 0.15051 245.368deg);
+  --chart-4: oklch(50.397% 0.12809 245.46deg);
+  --chart-5: oklch(44.549% 0.1073 242.792deg);
+  --radius: 10px;
+  --sidebar: oklch(98.51% 0 none);
+  --sidebar-foreground: oklch(14.479% 0 none);
+  --sidebar-primary: oklch(59.335% 0.15051 245.368deg);
+  --sidebar-primary-foreground: oklch(97.711% 0.01249 236.62deg);
+  --sidebar-accent: oklch(97.015% 0 none);
+  --sidebar-accent-foreground: oklch(20.463% 0 none);
+  --sidebar-border: oklch(92.191% 0 none);
+  --sidebar-ring: oklch(70.9% 0 none);
+  --primary-muted: oklch(95.142% 0.02503 236.824deg);
+  --neon-bg: oklch(18.569% 0.04802 268.675deg);
+  --surface: oklch(10.836% 0.03273 279.443deg);
+  --neon-accent: oklch(65.614% 0.17263 45.422deg);
   --success: oklch(78% 0.08 200deg);
   --warning: oklch(89% 0.1 75deg);
   --error: oklch(75% 0.15 25deg);
@@ -209,6 +213,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground min-h-[100vh] flex flex-col;
   }
