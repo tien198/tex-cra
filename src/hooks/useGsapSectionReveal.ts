@@ -11,6 +11,7 @@ interface SectionRevealOptions {
   scale?: number
   stagger?: number
   start?: string
+  x?: number
   y?: number
 }
 
@@ -21,6 +22,7 @@ export function useGsapSectionReveal(
     scale = 1,
     stagger = 0.1,
     start = 'top 82%',
+    x = 0,
     y = 32,
   }: SectionRevealOptions = {},
 ) {
@@ -46,7 +48,7 @@ export function useGsapSectionReveal(
         })
         .fromTo(
           targets,
-          { autoAlpha: 0, scale, y },
+          { autoAlpha: 0, scale, x, y },
           {
             autoAlpha: 1,
             clearProps: 'opacity,transform,visibility',
@@ -54,11 +56,12 @@ export function useGsapSectionReveal(
             ease: 'power3.out',
             scale: 1,
             stagger,
+            x: 0,
             y: 0,
           },
         )
     })
 
     return () => media.revert()
-  }, [duration, scale, scope, stagger, start, y])
+  }, [duration, scale, scope, stagger, start, x, y])
 }

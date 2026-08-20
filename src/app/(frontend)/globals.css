@@ -49,8 +49,10 @@
   --font-advent: var(--font-source-advent);
   --font-afacad: var(--font-source-afacad);
   --font-alumni: var(--font-source-alumni);
+  --font-alumni-sans: var(--font-source-alumni);
   --font-abel: var(--font-source-abel);
   --font-aldrich: var(--font-source-aldrich);
+  --font-anton: var(--font-source-anton);
 }
 
 @layer utilities {
