@@ -5,7 +5,10 @@ interface StatItemProps {
 
 export function StatItem({ label, value }: StatItemProps) {
   return (
-    <div className="flex flex-col items-center gap-2 px-4 py-7 text-center lg:px-10 lg:py-0">
+    <div
+      className="flex flex-col items-center gap-2 px-4 py-7 text-center lg:px-10 lg:py-0"
+      data-gsap-reveal
+    >
       <strong className="font-aldrich text-[clamp(2rem,3.9vw,3.5rem)] font-normal tracking-[0.02em] text-primary-foreground drop-shadow-neon-metric">
         {value}
       </strong>

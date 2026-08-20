@@ -1,11 +1,18 @@
 'use client'
 
+import { useRef } from 'react'
+
+import { useGsapSectionReveal } from '@/hooks/useGsapSectionReveal'
 import { useLocale } from '@/hooks/useLocale'
 import * as m from '../../../paraglide/messages.js'
 import { WorkCard } from './comps/work-card'
 
 export function Work() {
   const locale = useLocale()
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useGsapSectionReveal(sectionRef, { scale: 0.98, stagger: 0.1, y: 40 })
+
   const projects = [
     {
       name: m.work_card_1_name({}, { locale }),
@@ -25,10 +32,14 @@ export function Work() {
   ]
 
   return (
-    <section className="scroll-mt-16 bg-primary-muted px-5 py-20 sm:px-8 lg:px-20" id="work">
+    <section
+      className="scroll-mt-16 bg-primary-muted px-5 py-20 sm:px-8 lg:px-20"
+      id="work"
+      ref={sectionRef}
+    >
       <div className="mx-auto flex w-full max-w-[80rem] flex-col gap-12">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <div className="flex flex-col items-start gap-2">
+          <div className="flex flex-col items-start gap-2" data-gsap-reveal>
             <p className="font-geist-mono text-[0.6875rem] tracking-[0.27em] text-primary uppercase">
               {m.work_eyebrow({}, { locale })}
             </p>
@@ -38,6 +49,7 @@ export function Work() {
           </div>
           <a
             className="w-fit rounded-lg border border-primary bg-secondary px-5 py-2.5 font-geist-mono text-[0.8125rem] text-secondary-foreground transition hover:bg-background"
+            data-gsap-reveal
             href="#contact"
           >
             {m.work_view_all({}, { locale })}

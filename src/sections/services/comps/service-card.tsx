@@ -6,7 +6,10 @@ interface ServiceCardProps {
 
 export function ServiceCard({ description, number, title }: ServiceCardProps) {
   return (
-    <article className="flex min-h-[13.75rem] flex-col items-start gap-4 rounded-lg border border-border bg-neon-bg p-7">
+    <article
+      className="flex min-h-[13.75rem] flex-col items-start gap-4 rounded-lg border border-border bg-neon-bg p-7"
+      data-gsap-reveal
+    >
       <span className="font-geist-mono text-[0.6875rem] tracking-[0.18em] text-primary">
         {number}
       </span>
