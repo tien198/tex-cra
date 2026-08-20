@@ -56,18 +56,6 @@ export function AboutStats() {
 
   const stats = [
     {
-      caption: m.about_stat_1_caption({}, { locale }),
-      countTo: 3,
-      label: m.about_stat_1_label({}, { locale }),
-      value: m.about_stat_1_value({}, { locale }),
-    },
-    {
-      caption: m.about_stat_2_caption({}, { locale }),
-      countTo: 40,
-      label: m.about_stat_2_label({}, { locale }),
-      value: m.about_stat_2_value({}, { locale }),
-    },
-    {
       caption: m.about_stat_3_caption({}, { locale }),
       countTo: 5,
       label: m.about_stat_3_label({}, { locale }),
@@ -78,6 +66,18 @@ export function AboutStats() {
       countTo: 100,
       label: m.about_stat_4_label({}, { locale }),
       value: m.about_stat_4_value({}, { locale }),
+    },
+    {
+      caption: m.about_stat_2_caption({}, { locale }),
+      countTo: 40,
+      label: m.about_stat_2_label({}, { locale }),
+      value: m.about_stat_2_value({}, { locale }),
+    },
+    {
+      caption: m.about_stat_1_caption({}, { locale }),
+      countTo: 3,
+      label: m.about_stat_1_label({}, { locale }),
+      value: m.about_stat_1_value({}, { locale }),
     },
   ]
 
@@ -104,13 +104,6 @@ export function AboutStats() {
           {stats.map((stat) => (
             <AboutStat key={stat.label} {...stat} />
           ))}
-        </div>
-
-        <div className="flex justify-center gap-2 md:hidden" aria-hidden="true">
-          <span className="h-2 w-6 rounded-full bg-primary" />
-          <span className="size-2 rounded-full bg-muted-foreground" />
-          <span className="size-2 rounded-full bg-muted-foreground" />
-          <span className="size-2 rounded-full bg-muted-foreground" />
         </div>
       </div>
     </section>
