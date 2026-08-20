@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/utilities/ui";
 
 import { ArrowRightIcon } from "./arrow-right-icon";
 import { useCarousel } from "./carousel-context";

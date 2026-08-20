@@ -2,8 +2,9 @@
 
 import * as React from "react";
 
-import { useCarousel } from "@/components/texcra/carousel/comps/carousel-context";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utilities/ui";
+
+import { useCarousel } from "./carousel-context";
 
 function CarouselDots({
   className,

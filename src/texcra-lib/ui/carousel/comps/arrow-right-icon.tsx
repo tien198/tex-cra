@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/utilities/ui";
 
 function ArrowRightIcon({ className }: { className?: string }) {
   return (

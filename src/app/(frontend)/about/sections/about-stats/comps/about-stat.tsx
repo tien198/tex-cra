@@ -8,7 +8,7 @@ interface AboutStatProps {
 export function AboutStat({ caption, countTo, label, value }: AboutStatProps) {
   return (
     <article
-      className="flex w-[18.75rem] shrink-0 snap-start flex-col items-center gap-3 rounded-lg border border-primary/20 px-6 py-10 text-center md:w-auto md:flex-1 md:rounded-none md:border-y-0 md:border-l-0 md:last:border-r-0"
+      className="flex w-full shrink-0 flex-col items-center gap-3 rounded-lg border border-primary/20 px-6 py-10 text-center md:flex-1 md:rounded-none md:border-y-0 md:border-l-0"
       data-gsap-reveal
     >
       <strong

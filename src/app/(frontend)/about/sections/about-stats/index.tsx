@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import { useGsapSectionReveal } from '@/texcra-lib/GSAP/useGsapSectionReveal'
 import { useLocale } from '@/texcra-lib/paraglide/useLocale'
+import { Carousel, CarouselContent, CarouselDots, CarouselItem } from '@/texcra-lib/ui/carousel'
 import * as m from '@/../paraglide/messages'
 import { AboutStat } from './comps/about-stat'
 
@@ -93,18 +94,23 @@ export function AboutStats() {
         >
           {m.about_stats_eyebrow({}, { locale })}
         </p>
-        <p
+        {/* <p
           className="max-w-full break-words text-center font-geist-mono text-[0.6875rem] leading-5 text-chart-5"
           data-gsap-reveal
         >
           {m.about_stats_motion_spec({}, { locale })}
-        </p>
+        </p> */}
 
-        <div className="flex w-full snap-x snap-mandatory gap-4 overflow-x-auto pb-2 md:gap-0">
-          {stats.map((stat) => (
-            <AboutStat key={stat.label} {...stat} />
-          ))}
-        </div>
+        <Carousel aria-label={m.about_stats_eyebrow({}, { locale })}>
+          <CarouselContent>
+            {stats.map((stat) => (
+              <CarouselItem key={stat.label} className="flex">
+                <AboutStat {...stat} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselDots />
+        </Carousel>
       </div>
     </section>
   )

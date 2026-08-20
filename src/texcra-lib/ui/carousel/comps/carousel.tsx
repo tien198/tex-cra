@@ -3,7 +3,7 @@
 import * as React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/utilities/ui";
 
 import { CarouselContext } from "./carousel-context";
 import type { CarouselContextValue, CarouselProps } from "./types";
