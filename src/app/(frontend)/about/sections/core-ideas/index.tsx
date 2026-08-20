@@ -57,30 +57,33 @@ export function CoreIdeas() {
           </p>
         </div>
 
-        <div
-          className="flex w-full flex-wrap items-center gap-4 border-2 border-primary"
-          data-gsap-reveal
-        >
-          <span className="bg-primary px-5 py-2 font-anton text-[clamp(2.25rem,4.45vw,4rem)] leading-none tracking-[0.06em] text-surface">
-            {m.about_core_label({}, { locale })}
-          </span>
-          <h2 className="min-w-0 px-1 font-anton text-[clamp(2.25rem,4.45vw,4rem)] leading-none tracking-[0.03em] text-neon-accent">
-            {m.about_ideas_label({}, { locale })}
-          </h2>
-        </div>
+        <div className="flex w-full flex-col items-start gap-12" data-idea-card-timeline-stage>
+          <div className="h-18 px-5 sm:px-8 lg:px-20"></div>
+          <div
+            className="flex w-full flex-wrap items-center gap-4 border-2 border-primary"
+            data-gsap-reveal
+          >
+            <span className="bg-primary px-5 py-2 font-anton text-[clamp(2.25rem,4.45vw,4rem)] leading-none tracking-[0.06em] text-surface">
+              {m.about_core_label({}, { locale })}
+            </span>
+            <h2 className="min-w-0 px-1 font-anton text-[clamp(2.25rem,4.45vw,4rem)] leading-none tracking-[0.03em] text-neon-accent">
+              {m.about_ideas_label({}, { locale })}
+            </h2>
+            <div data-gsap-reveal />
+          </div>
 
-        <p
-          className="max-w-full wrap-break-word font-geist-mono text-[0.6875rem] leading-5 text-chart-5"
-          data-gsap-reveal
-        >
-          {m.about_core_motion_spec({}, { locale })}
-        </p>
-        <div className="h-px w-full bg-primary/15" />
+          {/* <p
+            className="max-w-full wrap-break-word font-geist-mono text-[0.6875rem] leading-5 text-chart-5"
 
-        <div className="grid w-full gap-5 md:grid-cols-2" data-idea-card-stage>
-          {cards.map((card) => (
-            <IdeaCard key={card.number} {...card} />
-          ))}
+          >
+            {m.about_core_motion_spec({}, { locale })}
+          </p> */}
+
+          <div className="grid w-full gap-5 md:grid-cols-2" data-idea-card-stage>
+            {cards.map((card) => (
+              <IdeaCard key={card.number} {...card} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

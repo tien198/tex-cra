@@ -23,7 +23,7 @@ export function SiteNavbar() {
     document.documentElement.lang = locale
   }, [locale])
   return (
-    <header className="fixed top-0 left-0 right-0 z-20 flex h-[4.5rem] items-center border-b border-border bg-neon-bg px-5 sm:px-8 lg:px-20">
+    <header className="fixed top-0 left-0 right-0 z-20 flex h-18 items-center border-b border-border bg-neon-bg px-5 sm:px-8 lg:px-20">
       <div className="mx-auto flex w-full max-w-[80rem] items-center justify-between">
         <Link aria-label="TexCra" href="/">
           <TexcraLogo />
