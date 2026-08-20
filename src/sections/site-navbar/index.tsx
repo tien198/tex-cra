@@ -13,9 +13,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { setLocale, useLocale } from '@/hooks/useLocale'
-import * as m from '../../../paraglide/messages.js'
-import type { Locale } from '../../../paraglide/runtime.js'
+import { setLocale, useLocale } from '@/texcra-lib/paraglide/useLocale'
+import * as m from '@/../paraglide/messages'
+import type { Locale } from '@/../paraglide/runtime'
 
 export function SiteNavbar() {
   const locale = useLocale()

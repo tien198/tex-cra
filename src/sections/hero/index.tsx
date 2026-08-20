@@ -1,7 +1,7 @@
 'use client'
 
-import { useLocale } from '@/hooks/useLocale'
-import * as m from '../../../paraglide/messages.js'
+import { useLocale } from '@/texcra-lib/paraglide/useLocale'
+import * as m from '@/../paraglide/messages'
 
 export function Hero() {
   const locale = useLocale()

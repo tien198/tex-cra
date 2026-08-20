@@ -2,9 +2,9 @@
 
 import { useRef } from 'react'
 
-import { useGsapSectionReveal } from '@/hooks/useGsapSectionReveal'
-import { useLocale } from '@/hooks/useLocale'
-import * as m from '../../../paraglide/messages.js'
+import { useGsapSectionReveal } from '@/texcra-lib/GSAP/useGsapSectionReveal'
+import { useLocale } from '@/texcra-lib/paraglide/useLocale'
+import * as m from '@/../paraglide/messages'
 import { WorkCard } from './comps/work-card'
 
 export function Work() {

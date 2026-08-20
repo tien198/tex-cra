@@ -3,8 +3,8 @@
 import Link from 'next/link'
 
 import { TexcraLogo } from '@/components/TexcraLogo'
-import { useLocale } from '@/hooks/useLocale'
-import * as m from '../../../paraglide/messages.js'
+import { useLocale } from '@/texcra-lib/paraglide/useLocale'
+import * as m from '@/../paraglide/messages.js'
 
 export function SiteFooter() {
   const locale = useLocale()

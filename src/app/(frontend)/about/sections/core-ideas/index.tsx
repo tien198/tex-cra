@@ -2,18 +2,18 @@
 
 import { useRef } from 'react'
 
-import { useGsapSectionReveal } from '@/hooks/useGsapSectionReveal'
-import { useLocale } from '@/hooks/useLocale'
-import * as m from '../../../../../../paraglide/messages.js'
+import { useGsapSectionReveal } from '@/texcra-lib/GSAP/useGsapSectionReveal'
+import { useLocale } from '@/texcra-lib/paraglide/useLocale'
+import * as m from '@/../paraglide/messages.js'
 import { IdeaCard } from './comps/idea-card'
-import { useIdeaCardScrollReveal } from './hooks/useIdeaCardScrollReveal'
+import { usePinnedScrollReveal } from '@/texcra-lib/GSAP/usePinnedScrollReveal'
 
 export function CoreIdeas() {
   const locale = useLocale()
   const sectionRef = useRef<HTMLElement>(null)
 
   useGsapSectionReveal(sectionRef, { duration: 0.95, stagger: 0.16, y: 80 })
-  useIdeaCardScrollReveal(sectionRef)
+  usePinnedScrollReveal(sectionRef)
 
   const cards = [
     {
@@ -57,7 +57,7 @@ export function CoreIdeas() {
           </p>
         </div>
 
-        <div className="flex w-full flex-col items-start gap-12" data-idea-card-timeline-stage>
+        <div className="flex w-full flex-col items-start gap-12" data-pinned-reveal-stage>
           <div className="h-18 px-5 sm:px-8 lg:px-20"></div>
           <div
             className="flex w-full flex-wrap items-center gap-4 border-2 border-primary"
@@ -79,7 +79,7 @@ export function CoreIdeas() {
             {m.about_core_motion_spec({}, { locale })}
           </p> */}
 
-          <div className="grid w-full gap-5 md:grid-cols-2" data-idea-card-stage>
+          <div className="grid w-full gap-5 md:grid-cols-2" data-pinned-reveal-items>
             {cards.map((card) => (
               <IdeaCard key={card.number} {...card} />
             ))}

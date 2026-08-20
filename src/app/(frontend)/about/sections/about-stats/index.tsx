@@ -4,9 +4,9 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-import { useGsapSectionReveal } from '@/hooks/useGsapSectionReveal'
-import { useLocale } from '@/hooks/useLocale'
-import * as m from '../../../../../../paraglide/messages.js'
+import { useGsapSectionReveal } from '@/texcra-lib/GSAP/useGsapSectionReveal'
+import { useLocale } from '@/texcra-lib/paraglide/useLocale'
+import * as m from '@/../paraglide/messages'
 import { AboutStat } from './comps/about-stat'
 
 gsap.registerPlugin(ScrollTrigger)

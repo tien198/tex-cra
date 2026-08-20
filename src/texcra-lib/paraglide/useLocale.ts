@@ -7,7 +7,7 @@ import {
   getLocale,
   setLocale as setParaglideLocale,
   type Locale,
-} from '../../paraglide/runtime.js'
+} from '../../../paraglide/runtime.js'
 
 const localeListeners = new Set<() => void>()
 
