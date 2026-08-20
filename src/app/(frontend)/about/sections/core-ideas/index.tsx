@@ -6,12 +6,14 @@ import { useGsapSectionReveal } from '@/hooks/useGsapSectionReveal'
 import { useLocale } from '@/hooks/useLocale'
 import * as m from '../../../../../../paraglide/messages.js'
 import { IdeaCard } from './comps/idea-card'
+import { useIdeaCardScrollReveal } from './hooks/useIdeaCardScrollReveal'
 
 export function CoreIdeas() {
   const locale = useLocale()
   const sectionRef = useRef<HTMLElement>(null)
 
   useGsapSectionReveal(sectionRef, { duration: 0.95, stagger: 0.16, y: 80 })
+  useIdeaCardScrollReveal(sectionRef)
 
   const cards = [
     {
@@ -75,7 +77,7 @@ export function CoreIdeas() {
         </p>
         <div className="h-px w-full bg-primary/15" />
 
-        <div className="grid w-full gap-5 md:grid-cols-2">
+        <div className="grid w-full gap-5 md:grid-cols-2" data-idea-card-stage>
           {cards.map((card) => (
             <IdeaCard key={card.number} {...card} />
           ))}
