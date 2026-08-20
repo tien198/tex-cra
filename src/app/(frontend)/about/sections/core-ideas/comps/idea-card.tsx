@@ -12,7 +12,7 @@ export function IdeaCard({ description, motionSpec, number, title }: IdeaCardPro
       data-idea-card
     >
       <span className="font-geist-mono text-sm tracking-[0.285em] text-primary">{number}</span>
-      <h3 className="font-afacad text-[1.75rem] leading-tight font-semibold tracking-[0.107em] text-[#f5f5f5]">
+      <h3 className="font-afacad text-[1.75rem] leading-tight font-semibold tracking-[0.107em] text-accent">
         {title}
       </h3>
       <p className="font-geist-mono text-[0.9375rem] leading-[1.625rem] text-ring">{description}</p>

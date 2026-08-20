@@ -15,7 +15,7 @@ export function PrincipleCard({
 }: PrincipleCardProps) {
   return (
     <article
-      className={`card flex min-h-[13.5rem] w-[18.75rem] shrink-0 snap-start flex-col items-start gap-6 rounded-lg border border-primary/30 bg-primary p-10 text-[#f5f5f5] md:w-auto md:flex-1 ${className}`}
+      className={`card flex min-h-[13.5rem] w-[18.75rem] shrink-0 snap-start flex-col items-start gap-6 rounded-lg border border-primary/30 bg-primary p-10 text-accent md:w-auto md:flex-1 ${className}`}
       data-gsap-reveal
     >
       <Icon aria-hidden="true" size={32} strokeWidth={1.8} />

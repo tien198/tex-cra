@@ -12,7 +12,7 @@ export function AboutStat({ caption, countTo, label, value }: AboutStatProps) {
       data-gsap-reveal
     >
       <strong
-        className="font-afacad text-[4rem] leading-none font-semibold text-[#f5f5f5]"
+        className="font-afacad text-[4rem] leading-none font-semibold text-accent"
         data-about-count
         data-count-to={countTo}
         data-final-value={value}

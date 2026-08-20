@@ -54,7 +54,7 @@ export function Process() {
             {m.about_process_eyebrow({}, { locale })}
           </p>
           <h2
-            className="font-afacad text-[clamp(3rem,3.9vw,3.5rem)] leading-[1.05] font-semibold text-[#f5f5f5]"
+            className="font-afacad text-[clamp(3rem,3.9vw,3.5rem)] leading-[1.05] font-semibold text-accent"
             data-gsap-reveal
           >
             {m.about_process_title({}, { locale })}

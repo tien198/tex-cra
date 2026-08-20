@@ -48,11 +48,11 @@ export function CoreIdeas() {
     >
       <div className="mx-auto flex w-full max-w-[80rem] flex-col items-start gap-12">
         <div className="flex w-full flex-col items-start" data-gsap-reveal>
-          <p className="flex items-center font-afacad text-[2.5rem] leading-none font-semibold tracking-[0.2em] text-[#f5f5f5]">
+          <p className="flex items-center font-afacad text-[2.5rem] leading-none font-semibold tracking-[0.2em] text-accent">
             <span>{m.about_brand_tex({}, { locale })}</span>
             <span className="font-advent text-primary">{m.about_brand_cra({}, { locale })}</span>
           </p>
-          <p className="mt-2 font-geist-mono text-lg leading-[1.875rem] text-[#f5f5f5] sm:text-xl">
+          <p className="mt-2 font-geist-mono text-lg leading-[1.875rem] text-accent sm:text-xl">
             {m.about_intro_description({}, { locale })}
           </p>
         </div>
@@ -70,7 +70,7 @@ export function CoreIdeas() {
         </div>
 
         <p
-          className="max-w-full break-words font-geist-mono text-[0.6875rem] leading-5 text-chart-5"
+          className="max-w-full wrap-break-word font-geist-mono text-[0.6875rem] leading-5 text-chart-5"
           data-gsap-reveal
         >
           {m.about_core_motion_spec({}, { locale })}

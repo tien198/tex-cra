@@ -45,13 +45,13 @@ export function Principles() {
             {m.about_principles_eyebrow({}, { locale })}
           </p>
           <h2
-            className="font-afacad text-[clamp(3rem,3.9vw,3.5rem)] leading-[1.05] font-semibold text-[#0a0a0a]"
+            className="font-afacad text-[clamp(3rem,3.9vw,3.5rem)] leading-[1.05] font-semibold text-surface"
             data-gsap-reveal
           >
             {m.about_principles_title({}, { locale })}
           </h2>
           <p
-            className="max-w-full break-words font-geist-mono text-[0.6875rem] leading-5 text-[#0a0a0a]"
+            className="max-w-full break-words font-geist-mono text-[0.6875rem] leading-5 text-surface"
             data-gsap-reveal
           >
             {m.about_principles_motion_spec({}, { locale })}

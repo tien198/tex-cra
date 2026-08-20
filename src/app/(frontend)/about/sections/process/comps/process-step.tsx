@@ -15,7 +15,7 @@ export function ProcessStep({ className = '', description, number, title }: Proc
         {number}
       </span>
       <div className="min-w-0 flex-1 pt-2">
-        <h3 className="break-words font-aldrich text-xl tracking-[0.14em] text-[#f5f5f5] sm:text-2xl sm:tracking-[0.17em]">
+        <h3 className="break-words font-aldrich text-xl tracking-[0.14em] text-accent sm:text-2xl sm:tracking-[0.17em]">
           {title}
         </h3>
         <p className="mt-3 font-afacad text-base leading-[1.6875rem] text-ring">{description}</p>

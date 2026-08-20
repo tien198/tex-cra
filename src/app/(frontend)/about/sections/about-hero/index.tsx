@@ -27,7 +27,7 @@ export function AboutHero() {
           {m.about_hero_eyebrow({}, { locale })}
         </p>
         <h1
-          className="font-aldrich text-[clamp(3rem,6.67vw,6rem)] leading-[1.1] tracking-[0.02em] text-[#f5f5f5] drop-shadow-neon-heading"
+          className="font-aldrich text-[clamp(3rem,6.67vw,6rem)] leading-[1.1] tracking-[0.02em] text-accent drop-shadow-neon-heading"
           data-gsap-reveal
         >
           {m.about_hero_title({}, { locale })}
