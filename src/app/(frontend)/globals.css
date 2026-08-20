@@ -44,13 +44,13 @@
   --breakpoint-lg: 64rem;
   --breakpoint-xl: 80rem;
   --breakpoint-2xl: 86rem;
-  --font-mono: var(--font-geist-mono);
-  --font-sans: var(--font-geist-sans);
-  --font-brand-accent: var(--font-advent);
-  --font-display: var(--font-afacad);
-  --font-hero: var(--font-alumni);
-  --font-label: var(--font-abel);
-  --font-metric: var(--font-aldrich);
+  --font-geist-mono: var(--font-source-geist-mono);
+  --font-geist-sans: var(--font-source-geist-sans);
+  --font-advent: var(--font-source-advent);
+  --font-afacad: var(--font-source-afacad);
+  --font-alumni: var(--font-source-alumni);
+  --font-abel: var(--font-source-abel);
+  --font-aldrich: var(--font-source-aldrich);
 }
 
 @layer utilities {
@@ -134,7 +134,7 @@
   --neon-bg: oklch(18.569% 0.04802 268.675deg);
   --surface: oklch(10.836% 0.03273 279.443deg);
   --neon-accent: oklch(65.614% 0.17263 45.422deg);
-  --neon-glow: #0062ff;
+  --neon-glow: oklch(55.605% 0.24543 261.342);
   --hero-overlay: linear-gradient(180deg, rgb(0 0 0 / 6%), rgb(2 8 24 / 22%));
   --cta-glow: radial-gradient(ellipse at center,
       color-mix(in srgb, var(--neon-glow) 20%, transparent) 0%,
@@ -267,7 +267,7 @@ html[data-theme='light'] {
 
 .texcra-home {
   color-scheme: light;
-  --background: oklch(100% 0 none);
+  /* --background: oklch(100% 0 none);
   --foreground: oklch(14.479% 0 none);
   --primary: oklch(50.397% 0.12809 245.46deg);
   --primary-foreground: oklch(97.711% 0.01249 236.62deg);
@@ -278,7 +278,7 @@ html[data-theme='light'] {
   --border: oklch(92.191% 0 none);
   --ring: oklch(70.9% 0 none);
   --chart-1: oklch(82.714% 0.10903 229.198deg);
-  --chart-3: oklch(59.335% 0.15051 245.368deg);
+  --chart-3: oklch(59.335% 0.15051 245.368deg); */
 }
 
 body:has(> .texcra-home)>header.container,

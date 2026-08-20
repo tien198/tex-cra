@@ -1,5 +1,3 @@
-import { SiteNavbar } from '@/sections/site-navbar'
-import { SiteFooter } from '@/sections/site-footer'
 import { ContactCta } from '@/sections/contact-cta'
 import { Hero } from '@/sections/hero'
 import { Services } from '@/sections/services'
@@ -8,8 +6,7 @@ import { Work } from '@/sections/work'
 
 export default function HomePage() {
   return (
-    <div className="texcra-home min-h-screen w-full overflow-x-hidden bg-primary-muted text-foreground">
-      <SiteNavbar />
+    <div className="min-h-screen w-full overflow-x-hidden bg-primary-muted text-foreground">
       <main>
         <Hero />
         <Services />
@@ -17,7 +14,6 @@ export default function HomePage() {
         <Work />
         <ContactCta />
       </main>
-      <SiteFooter />
     </div>
   )
 }
