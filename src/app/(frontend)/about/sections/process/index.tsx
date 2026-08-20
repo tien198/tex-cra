@@ -3,6 +3,7 @@
 import { useRef } from 'react'
 
 import { useGsapSectionReveal } from '@/texcra-lib/GSAP/useGsapSectionReveal'
+import { usePinnedScrollReveal } from '@/texcra-lib/GSAP/usePinnedScrollReveal'
 import { useLocale } from '@/texcra-lib/paraglide/useLocale'
 import * as m from '@/../paraglide/messages'
 import { ProcessStep } from './comps/process-step'
@@ -12,6 +13,7 @@ export function Process() {
   const sectionRef = useRef<HTMLElement>(null)
 
   useGsapSectionReveal(sectionRef, { duration: 0.85, stagger: 0.16, x: -60, y: 0 })
+  usePinnedScrollReveal(sectionRef)
 
   const steps = [
     {
@@ -45,7 +47,11 @@ export function Process() {
       ref={sectionRef}
     >
       <div className="pointer-events-none absolute left-1/2 top-0 h-[35rem] w-[43.75rem] max-w-[130vw] -translate-x-1/2 -translate-y-[13%] rounded-full bg-cta-glow" />
-      <div className="relative mx-auto flex w-full max-w-[75rem] flex-col gap-8 lg:gap-16">
+      <div
+        className="relative mx-auto flex w-full max-w-[75rem] flex-col gap-8 lg:gap-16"
+        data-pinned-reveal-stage
+      >
+        <div className="h-18 px-5 sm:px-8 lg:px-20"></div>
         <div className="relative z-10 flex flex-col items-center gap-4 text-center">
           <p
             className="font-aldrich text-sm tracking-[0.5em] text-primary uppercase"
@@ -59,15 +65,15 @@ export function Process() {
           >
             {m.about_process_title({}, { locale })}
           </h2>
-          <p
+          {/* <p
             className="max-w-full break-words font-geist-mono text-[0.6875rem] leading-5 text-chart-5"
             data-gsap-reveal
           >
             {m.about_process_motion_spec({}, { locale })}
-          </p>
+          </p> */}
         </div>
 
-        <div>
+        <div className="grid" data-pinned-reveal-items>
           {steps.map((step) => (
             <ProcessStep key={step.number} {...step} />
           ))}

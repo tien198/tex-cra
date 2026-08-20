@@ -9,7 +9,7 @@ export function ProcessStep({ className = '', description, number, title }: Proc
   return (
     <article
       className={`step relative z-10 flex w-full items-start gap-5 border-b border-primary/15 py-8 sm:gap-8 ${className}`}
-      data-gsap-reveal
+      data-pinned-reveal-item
     >
       <span className="shrink-0 font-afacad text-5xl leading-none font-semibold text-primary">
         {number}
