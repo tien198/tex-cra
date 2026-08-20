@@ -8,8 +8,8 @@ export function TexcraLogo({ className = '' }: TexcraLogoProps) {
       aria-label="TexCra"
       className={`inline-flex items-center text-xl font-semibold tracking-[0.25em] ${className}`}
     >
-      <span className="font-display text-muted">Tex</span>
-      <span className="font-brand-accent text-primary">Cra</span>
+      <span className="font-afacad text-muted">Tex</span>
+      <span className="font-advent text-primary">Cra</span>
     </span>
   )
 }

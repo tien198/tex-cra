@@ -14,10 +14,10 @@ export function SiteFooter() {
       <Link aria-label="TexCra" href="/">
         <TexcraLogo />
       </Link>
-      <p className="font-mono text-xs tracking-[0.04em] text-primary">
+      <p className="font-geist-mono text-xs tracking-[0.04em] text-primary">
         {m.footer_copy({}, { locale })}
       </p>
-      <nav className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 font-mono text-xs tracking-[0.04em] text-muted-foreground">
+      <nav className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 font-geist-mono text-xs tracking-[0.04em] text-muted-foreground">
         <Link className="transition-colors hover:text-primary-foreground" href="/privacy">
           {m.footer_privacy({}, { locale })}
         </Link>

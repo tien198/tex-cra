@@ -31,7 +31,7 @@ export function SiteNavbar() {
 
         <nav
           aria-label={m.nav_primary_label({}, { locale })}
-          className="hidden items-center gap-10 font-mono text-[0.8125rem] tracking-[0.115em] text-muted-foreground lg:flex"
+          className="hidden items-center gap-10 font-geist-mono text-[0.8125rem] tracking-[0.115em] text-muted-foreground lg:flex"
         >
           <a className="transition-colors hover:text-primary-foreground" href="#work">
             {m.nav_work({}, { locale })}
@@ -51,14 +51,14 @@ export function SiteNavbar() {
           <Select onValueChange={(nextLocale) => setLocale(nextLocale as Locale)} value={locale}>
             <SelectTrigger
               aria-label={m.language_label({}, { locale })}
-              className="h-9 w-auto cursor-pointer gap-2 rounded-lg border-border bg-transparent px-2.5 py-0 font-mono text-[0.8125rem] text-muted-foreground shadow-none transition-colors hover:text-primary-foreground focus-visible:ring-primary/30 [&>svg:last-child]:size-3 [&>svg:last-child]:opacity-100"
+              className="h-9 w-auto cursor-pointer gap-2 rounded-lg border-border bg-transparent px-2.5 py-0 font-geist-mono text-[0.8125rem] text-muted-foreground shadow-none transition-colors hover:text-primary-foreground focus-visible:ring-primary/30 [&>svg:last-child]:size-3 [&>svg:last-child]:opacity-100"
             >
               <Globe2 aria-hidden="true" size={14} strokeWidth={1.6} />
               <SelectValue />
             </SelectTrigger>
             <SelectContent
               align="start"
-              className="min-w-[var(--radix-select-trigger-width)] border-border bg-neon-bg font-mono text-[0.8125rem] text-muted-foreground"
+              className="min-w-[var(--radix-select-trigger-width)] border-border bg-neon-bg font-geist-mono text-[0.8125rem] text-muted-foreground"
               position="popper"
               side="bottom"
             >
@@ -72,13 +72,13 @@ export function SiteNavbar() {
           </Select>
 
           <Link
-            className="hidden font-mono text-[0.8125rem] text-muted-foreground transition-colors hover:text-primary-foreground sm:block"
+            className="hidden font-geist-mono text-[0.8125rem] text-muted-foreground transition-colors hover:text-primary-foreground sm:block"
             href="/admin"
           >
             {m.nav_login({}, { locale })}
           </Link>
           <a
-            className="hidden rounded-lg bg-primary px-5 py-2.5 font-mono text-[0.8125rem] tracking-[0.04em] text-primary-foreground shadow-neon-nav transition hover:bg-chart-3 min-[28rem]:block"
+            className="hidden rounded-lg bg-primary px-5 py-2.5 font-geist-mono text-[0.8125rem] tracking-[0.04em] text-primary-foreground shadow-neon-nav transition hover:bg-chart-3 min-[28rem]:block"
             href="#contact"
           >
             {m.nav_cta({}, { locale })}

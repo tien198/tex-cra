@@ -29,15 +29,15 @@ export function Work() {
       <div className="mx-auto flex w-full max-w-[80rem] flex-col gap-12">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="flex flex-col items-start gap-2">
-            <p className="font-mono text-[0.6875rem] tracking-[0.27em] text-primary uppercase">
+            <p className="font-geist-mono text-[0.6875rem] tracking-[0.27em] text-primary uppercase">
               {m.work_eyebrow({}, { locale })}
             </p>
-            <h2 className="font-display text-4xl tracking-[0.02em] text-foreground sm:text-5xl">
+            <h2 className="font-afacad text-4xl tracking-[0.02em] text-foreground sm:text-5xl">
               {m.work_title({}, { locale })}
             </h2>
           </div>
           <a
-            className="w-fit rounded-lg border border-primary bg-secondary px-5 py-2.5 font-mono text-[0.8125rem] text-secondary-foreground transition hover:bg-background"
+            className="w-fit rounded-lg border border-primary bg-secondary px-5 py-2.5 font-geist-mono text-[0.8125rem] text-secondary-foreground transition hover:bg-background"
             href="#contact"
           >
             {m.work_view_all({}, { locale })}

@@ -31,13 +31,13 @@ export function Services() {
     >
       <div className="mx-auto flex w-full max-w-[80rem] flex-col items-center gap-12">
         <div className="flex max-w-4xl flex-col items-center text-center">
-          <p className="font-mono text-[0.6875rem] tracking-[0.27em] text-primary uppercase">
+          <p className="font-geist-mono text-[0.6875rem] tracking-[0.27em] text-primary uppercase">
             {m.services_eyebrow({}, { locale })}
           </p>
-          <h2 className="mt-5 font-display text-4xl tracking-[0.02em] text-foreground sm:text-5xl">
+          <h2 className="mt-5 font-afacad text-4xl tracking-[0.02em] text-foreground sm:text-5xl">
             {m.services_title({}, { locale })}
           </h2>
-          <p className="mt-5 whitespace-pre-line font-mono text-sm leading-7 text-muted-foreground sm:text-base">
+          <p className="mt-5 whitespace-pre-line font-geist-mono text-sm leading-7 text-muted-foreground sm:text-base">
             {m.hero_description({}, { locale })}
           </p>
         </div>
