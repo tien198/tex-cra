@@ -4,6 +4,7 @@ import { useRef } from 'react'
 
 import { useGsapSectionReveal } from '@/texcra-lib/GSAP/useGsapSectionReveal'
 import { usePinnedScrollReveal } from '@/texcra-lib/GSAP/usePinnedScrollReveal'
+import { MessageUI } from '@/texcra-lib/paraglide/message-ui'
 import { useLocale } from '@/texcra-lib/paraglide/useLocale'
 import * as m from '@/../paraglide/messages'
 import { ProcessStep } from './comps/process-step'
@@ -17,27 +18,31 @@ export function Process() {
 
   const steps = [
     {
-      description: m.about_process_1_description({}, { locale }),
-      number: m.about_process_1_number({}, { locale }),
-      title: m.about_process_1_title({}, { locale }),
+      description: <MessageUI locale={locale} message={m.about_process_1_description} />,
+      id: 'process-1',
+      number: <MessageUI locale={locale} message={m.about_process_1_number} />,
+      title: <MessageUI locale={locale} message={m.about_process_1_title} />,
     },
     {
       className: 'opacity-[0.85]',
-      description: m.about_process_2_description({}, { locale }),
-      number: m.about_process_2_number({}, { locale }),
-      title: m.about_process_2_title({}, { locale }),
+      description: <MessageUI locale={locale} message={m.about_process_2_description} />,
+      id: 'process-2',
+      number: <MessageUI locale={locale} message={m.about_process_2_number} />,
+      title: <MessageUI locale={locale} message={m.about_process_2_title} />,
     },
     {
       className: 'opacity-[0.65]',
-      description: m.about_process_3_description({}, { locale }),
-      number: m.about_process_3_number({}, { locale }),
-      title: m.about_process_3_title({}, { locale }),
+      description: <MessageUI locale={locale} message={m.about_process_3_description} />,
+      id: 'process-3',
+      number: <MessageUI locale={locale} message={m.about_process_3_number} />,
+      title: <MessageUI locale={locale} message={m.about_process_3_title} />,
     },
     {
       className: 'opacity-[0.45]',
-      description: m.about_process_4_description({}, { locale }),
-      number: m.about_process_4_number({}, { locale }),
-      title: m.about_process_4_title({}, { locale }),
+      description: <MessageUI locale={locale} message={m.about_process_4_description} />,
+      id: 'process-4',
+      number: <MessageUI locale={locale} message={m.about_process_4_number} />,
+      title: <MessageUI locale={locale} message={m.about_process_4_title} />,
     },
   ]
 
@@ -57,25 +62,25 @@ export function Process() {
             className="font-aldrich text-sm tracking-[0.5em] text-primary uppercase"
             data-gsap-reveal
           >
-            {m.about_process_eyebrow({}, { locale })}
+            <MessageUI locale={locale} message={m.about_process_eyebrow} />
           </p>
           <h2
             className="font-afacad text-[clamp(3rem,3.9vw,3.5rem)] leading-[1.05] font-semibold text-accent"
             data-gsap-reveal
           >
-            {m.about_process_title({}, { locale })}
+            <MessageUI locale={locale} message={m.about_process_title} />
           </h2>
           {/* <p
             className="max-w-full break-words font-geist-mono text-[0.6875rem] leading-5 text-chart-5"
             data-gsap-reveal
           >
-            {m.about_process_motion_spec({}, { locale })}
+            <MessageUI locale={locale} message={m.about_process_motion_spec} />
           </p> */}
         </div>
 
         <div className="grid" data-pinned-reveal-items>
           {steps.map((step) => (
-            <ProcessStep key={step.number} {...step} />
+            <ProcessStep key={step.id} {...step} />
           ))}
         </div>
       </div>

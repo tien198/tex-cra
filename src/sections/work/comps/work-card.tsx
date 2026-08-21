@@ -1,7 +1,9 @@
+import type { ReactNode } from 'react'
+
 interface WorkCardProps {
-  name: string
-  tag: string
-  thumbnailLabel: string
+  name: ReactNode
+  tag: ReactNode
+  thumbnailLabel: ReactNode
 }
 
 export function WorkCard({ name, tag, thumbnailLabel }: WorkCardProps) {

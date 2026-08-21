@@ -13,6 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import { MessageUI } from '@/texcra-lib/paraglide/message-ui'
 import { setLocale, useLocale } from '@/texcra-lib/paraglide/useLocale'
 import * as m from '@/../paraglide/messages'
 import type { Locale } from '@/../paraglide/runtime'
@@ -34,16 +35,16 @@ export function SiteNavbar() {
           className="hidden items-center gap-10 font-geist-mono text-[0.8125rem] tracking-[0.115em] text-muted-foreground lg:flex"
         >
           <a className="transition-colors hover:text-primary-foreground" href="#work">
-            {m.nav_work({}, { locale })}
+            <MessageUI locale={locale} message={m.nav_work} />
           </a>
           <a className="transition-colors hover:text-primary-foreground" href="#services">
-            {m.nav_services({}, { locale })}
+            <MessageUI locale={locale} message={m.nav_services} />
           </a>
           <Link className="transition-colors hover:text-primary-foreground" href="/about">
-            {m.nav_about({}, { locale })}
+            <MessageUI locale={locale} message={m.nav_about} />
           </Link>
           <Link className="transition-colors hover:text-primary-foreground" href="/posts">
-            {m.nav_blog({}, { locale })}
+            <MessageUI locale={locale} message={m.nav_blog} />
           </Link>
         </nav>
 
@@ -75,13 +76,13 @@ export function SiteNavbar() {
             className="hidden font-geist-mono text-[0.8125rem] text-muted-foreground transition-colors hover:text-primary-foreground sm:block"
             href="/admin"
           >
-            {m.nav_login({}, { locale })}
+            <MessageUI locale={locale} message={m.nav_login} />
           </Link>
           <a
             className="hidden rounded-lg bg-primary px-5 py-2.5 font-geist-mono text-[0.8125rem] tracking-[0.04em] text-primary-foreground shadow-neon-nav transition hover:bg-chart-3 min-[28rem]:block"
             href="#contact"
           >
-            {m.nav_cta({}, { locale })}
+            <MessageUI locale={locale} message={m.nav_cta} />
           </a>
         </div>
       </div>

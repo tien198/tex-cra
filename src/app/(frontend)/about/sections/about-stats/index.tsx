@@ -5,6 +5,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import { useGsapSectionReveal } from '@/texcra-lib/GSAP/useGsapSectionReveal'
+import { MessageUI } from '@/texcra-lib/paraglide/message-ui'
 import { useLocale } from '@/texcra-lib/paraglide/useLocale'
 import { Carousel, CarouselContent, CarouselDots, CarouselItem } from '@/texcra-lib/ui/carousel'
 import * as m from '@/../paraglide/messages'
@@ -33,15 +34,19 @@ export function AboutStats() {
             const end = Number(target.dataset.countTo ?? 0)
             const finalValue = target.dataset.finalValue ?? String(end)
             const counter = { value: 0 }
+            const valueTarget = target.querySelector<HTMLElement>('strong') ?? target
 
             gsap.to(counter, {
               duration: 1.6,
               ease: 'power3.out',
               onComplete: () => {
-                target.textContent = finalValue
+                valueTarget.textContent = finalValue
               },
               onUpdate: () => {
-                target.textContent = finalValue.replace(/^\d+/, String(Math.round(counter.value)))
+                valueTarget.textContent = finalValue.replace(
+                  /^\d+/,
+                  String(Math.round(counter.value)),
+                )
               },
               value: end,
             })
@@ -57,28 +62,36 @@ export function AboutStats() {
 
   const stats = [
     {
-      caption: m.about_stat_3_caption({}, { locale }),
+      caption: <MessageUI locale={locale} message={m.about_stat_3_caption} />,
       countTo: 5,
-      label: m.about_stat_3_label({}, { locale }),
-      value: m.about_stat_3_value({}, { locale }),
+      finalValue: m.about_stat_3_value({}, { locale }),
+      id: 'average-time',
+      label: <MessageUI locale={locale} message={m.about_stat_3_label} />,
+      value: <MessageUI locale={locale} message={m.about_stat_3_value} />,
     },
     {
-      caption: m.about_stat_4_caption({}, { locale }),
+      caption: <MessageUI locale={locale} message={m.about_stat_4_caption} />,
       countTo: 100,
-      label: m.about_stat_4_label({}, { locale }),
-      value: m.about_stat_4_value({}, { locale }),
+      finalValue: m.about_stat_4_value({}, { locale }),
+      id: 'returning-clients',
+      label: <MessageUI locale={locale} message={m.about_stat_4_label} />,
+      value: <MessageUI locale={locale} message={m.about_stat_4_value} />,
     },
     {
-      caption: m.about_stat_2_caption({}, { locale }),
+      caption: <MessageUI locale={locale} message={m.about_stat_2_caption} />,
       countTo: 40,
-      label: m.about_stat_2_label({}, { locale }),
-      value: m.about_stat_2_value({}, { locale }),
+      finalValue: m.about_stat_2_value({}, { locale }),
+      id: 'websites-delivered',
+      label: <MessageUI locale={locale} message={m.about_stat_2_label} />,
+      value: <MessageUI locale={locale} message={m.about_stat_2_value} />,
     },
     {
-      caption: m.about_stat_1_caption({}, { locale }),
+      caption: <MessageUI locale={locale} message={m.about_stat_1_caption} />,
       countTo: 3,
-      label: m.about_stat_1_label({}, { locale }),
-      value: m.about_stat_1_value({}, { locale }),
+      finalValue: m.about_stat_1_value({}, { locale }),
+      id: 'team-experts',
+      label: <MessageUI locale={locale} message={m.about_stat_1_label} />,
+      value: <MessageUI locale={locale} message={m.about_stat_1_value} />,
     },
   ]
 
@@ -92,19 +105,19 @@ export function AboutStats() {
           className="font-aldrich text-sm tracking-[0.5em] text-primary uppercase"
           data-gsap-reveal
         >
-          {m.about_stats_eyebrow({}, { locale })}
+          <MessageUI locale={locale} message={m.about_stats_eyebrow} />
         </p>
         {/* <p
           className="max-w-full break-words text-center font-geist-mono text-[0.6875rem] leading-5 text-chart-5"
           data-gsap-reveal
         >
-          {m.about_stats_motion_spec({}, { locale })}
+          <MessageUI locale={locale} message={m.about_stats_motion_spec} />
         </p> */}
 
         <Carousel aria-label={m.about_stats_eyebrow({}, { locale })}>
           <CarouselContent>
             {stats.map((stat) => (
-              <CarouselItem key={stat.label} className="flex">
+              <CarouselItem key={stat.id} className="flex">
                 <AboutStat {...stat} />
               </CarouselItem>
             ))}

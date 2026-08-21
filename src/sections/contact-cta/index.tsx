@@ -3,6 +3,7 @@
 import { useRef } from 'react'
 
 import { useGsapSectionReveal } from '@/texcra-lib/GSAP/useGsapSectionReveal'
+import { MessageUI } from '@/texcra-lib/paraglide/message-ui'
 import { useLocale } from '@/texcra-lib/paraglide/useLocale'
 import * as m from '@/../paraglide/messages.js'
 
@@ -23,26 +24,26 @@ export function ContactCta() {
         className="relative font-geist-mono text-[0.6875rem] tracking-[0.36em] text-chart-1 uppercase"
         data-gsap-reveal
       >
-        {m.cta_eyebrow({}, { locale })}
+        <MessageUI locale={locale} message={m.cta_eyebrow} />
       </p>
       <h2
         className="relative max-w-[56.25rem] whitespace-pre-line font-afacad text-[clamp(2.75rem,4.45vw,4rem)] leading-[1.05] tracking-[0.015em] text-primary-foreground drop-shadow-neon-heading"
         data-gsap-reveal
       >
-        {m.cta_heading({}, { locale })}
+        <MessageUI locale={locale} message={m.cta_heading} />
       </h2>
       <p
         className="relative font-geist-mono text-sm text-ring sm:text-[0.9375rem]"
         data-gsap-reveal
       >
-        {m.cta_description({}, { locale })}
+        <MessageUI locale={locale} message={m.cta_description} />
       </p>
       <a
         className="relative mt-1 rounded-lg bg-primary px-12 py-[1.125rem] font-abel text-lg tracking-[0.095em] text-primary-foreground shadow-neon-cta transition hover:bg-chart-3"
         data-gsap-reveal
         href="mailto:hello@texcra.com"
       >
-        {m.cta_button({}, { locale })}
+        <MessageUI locale={locale} message={m.cta_button} />
       </a>
     </section>
   )

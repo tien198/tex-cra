@@ -1,8 +1,10 @@
+import type { ReactNode } from 'react'
+
 interface IdeaCardProps {
-  description: string
-  motionSpec?: string
-  number: string
-  title: string
+  description: ReactNode
+  motionSpec?: ReactNode
+  number: ReactNode
+  title: ReactNode
 }
 
 export function IdeaCard({ description, motionSpec, number, title }: IdeaCardProps) {

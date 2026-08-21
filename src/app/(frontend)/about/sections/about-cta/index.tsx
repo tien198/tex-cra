@@ -4,6 +4,7 @@ import { useRef } from 'react'
 import { ArrowRight } from 'lucide-react'
 
 import { useGsapSectionReveal } from '@/texcra-lib/GSAP/useGsapSectionReveal'
+import { MessageUI } from '@/texcra-lib/paraglide/message-ui'
 import { useLocale } from '@/texcra-lib/paraglide/useLocale'
 import * as m from '@/../paraglide/messages.js'
 
@@ -25,19 +26,19 @@ export function AboutCta() {
           className="font-aldrich text-sm tracking-[0.5em] text-primary uppercase"
           data-gsap-reveal
         >
-          {m.about_cta_eyebrow({}, { locale })}
+          <MessageUI locale={locale} message={m.about_cta_eyebrow} />
         </p>
         <h2
           className="whitespace-pre-line font-aldrich text-[clamp(3rem,5vw,4.5rem)] leading-[1.1] text-white"
           data-gsap-reveal
         >
-          {m.about_cta_heading({}, { locale })}
+          <MessageUI locale={locale} message={m.about_cta_heading} />
         </h2>
         <p
           className="max-w-[56rem] whitespace-pre-line font-afacad text-lg leading-[1.7] text-ring"
           data-gsap-reveal
         >
-          {m.about_cta_description({}, { locale })}
+          <MessageUI locale={locale} message={m.about_cta_description} />
         </p>
 
         <div
@@ -48,14 +49,14 @@ export function AboutCta() {
             className="flex items-center justify-center gap-2.5 rounded-md bg-primary px-10 py-4 font-aldrich text-sm tracking-[0.14em] text-white transition hover:bg-chart-3"
             href="mailto:hello@texcra.com"
           >
-            {m.about_cta_primary({}, { locale })}
+            <MessageUI locale={locale} message={m.about_cta_primary} />
             <ArrowRight aria-hidden="true" size={18} />
           </a>
           <a
             className="flex items-center justify-center rounded-md border border-primary/40 px-10 py-4 font-aldrich text-sm tracking-[0.14em] text-ring transition hover:border-primary hover:text-white"
             href="/#work"
           >
-            {m.about_cta_secondary({}, { locale })}
+            <MessageUI locale={locale} message={m.about_cta_secondary} />
           </a>
         </div>
 
@@ -63,7 +64,7 @@ export function AboutCta() {
           className="max-w-full break-words font-geist-mono text-[0.6875rem] leading-5 text-chart-5"
           data-gsap-reveal
         >
-          {m.about_cta_motion_spec({}, { locale })}
+          <MessageUI locale={locale} message={m.about_cta_motion_spec} />
         </p>
       </div>
     </section>

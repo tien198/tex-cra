@@ -3,6 +3,7 @@
 import Link from 'next/link'
 
 import { TexcraLogo } from '@/components/TexcraLogo'
+import { MessageUI } from '@/texcra-lib/paraglide/message-ui'
 import { useLocale } from '@/texcra-lib/paraglide/useLocale'
 import * as m from '@/../paraglide/messages.js'
 
@@ -15,20 +16,20 @@ export function SiteFooter() {
         <TexcraLogo />
       </Link>
       <p className="font-geist-mono text-xs tracking-[0.04em] text-primary">
-        {m.footer_copy({}, { locale })}
+        <MessageUI locale={locale} message={m.footer_copy} />
       </p>
       <nav className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 font-geist-mono text-xs tracking-[0.04em] text-muted-foreground">
         <Link className="transition-colors hover:text-primary-foreground" href="/privacy">
-          {m.footer_privacy({}, { locale })}
+          <MessageUI locale={locale} message={m.footer_privacy} />
         </Link>
         <Link className="transition-colors hover:text-primary-foreground" href="/terms">
-          {m.footer_terms({}, { locale })}
+          <MessageUI locale={locale} message={m.footer_terms} />
         </Link>
         <a className="transition-colors hover:text-primary-foreground" href="https://twitter.com">
-          {m.footer_twitter({}, { locale })}
+          <MessageUI locale={locale} message={m.footer_twitter} />
         </a>
         <a className="transition-colors hover:text-primary-foreground" href="https://dribbble.com">
-          {m.footer_dribbble({}, { locale })}
+          <MessageUI locale={locale} message={m.footer_dribbble} />
         </a>
       </nav>
     </footer>

@@ -1,8 +1,10 @@
+import type { ReactNode } from 'react'
+
 interface ProcessStepProps {
   className?: string
-  description: string
-  number: string
-  title: string
+  description: ReactNode
+  number: ReactNode
+  title: ReactNode
 }
 
 export function ProcessStep({ className = '', description, number, title }: ProcessStepProps) {

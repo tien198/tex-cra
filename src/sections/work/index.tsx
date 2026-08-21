@@ -3,6 +3,7 @@
 import { useRef } from 'react'
 
 import { useGsapSectionReveal } from '@/texcra-lib/GSAP/useGsapSectionReveal'
+import { MessageUI } from '@/texcra-lib/paraglide/message-ui'
 import { useLocale } from '@/texcra-lib/paraglide/useLocale'
 import * as m from '@/../paraglide/messages'
 import { WorkCard } from './comps/work-card'
@@ -15,19 +16,22 @@ export function Work() {
 
   const projects = [
     {
-      name: m.work_card_1_name({}, { locale }),
-      tag: m.work_card_1_tag({}, { locale }),
-      thumbnailLabel: m.work_card_1_thumbnail_label({}, { locale }),
+      id: 'nebula',
+      name: <MessageUI locale={locale} message={m.work_card_1_name} />,
+      tag: <MessageUI locale={locale} message={m.work_card_1_tag} />,
+      thumbnailLabel: <MessageUI locale={locale} message={m.work_card_1_thumbnail_label} />,
     },
     {
-      name: m.work_card_2_name({}, { locale }),
-      tag: m.work_card_2_tag({}, { locale }),
-      thumbnailLabel: m.work_card_2_thumbnail_label({}, { locale }),
+      id: 'vertex',
+      name: <MessageUI locale={locale} message={m.work_card_2_name} />,
+      tag: <MessageUI locale={locale} message={m.work_card_2_tag} />,
+      thumbnailLabel: <MessageUI locale={locale} message={m.work_card_2_thumbnail_label} />,
     },
     {
-      name: m.work_card_3_name({}, { locale }),
-      tag: m.work_card_3_tag({}, { locale }),
-      thumbnailLabel: m.work_card_3_thumbnail_label({}, { locale }),
+      id: 'pulse',
+      name: <MessageUI locale={locale} message={m.work_card_3_name} />,
+      tag: <MessageUI locale={locale} message={m.work_card_3_tag} />,
+      thumbnailLabel: <MessageUI locale={locale} message={m.work_card_3_thumbnail_label} />,
     },
   ]
 
@@ -41,10 +45,10 @@ export function Work() {
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="flex flex-col items-start gap-2" data-gsap-reveal>
             <p className="font-geist-mono text-[0.6875rem] tracking-[0.27em] text-primary uppercase">
-              {m.work_eyebrow({}, { locale })}
+              <MessageUI locale={locale} message={m.work_eyebrow} />
             </p>
             <h2 className="font-afacad text-4xl tracking-[0.02em] text-foreground sm:text-5xl">
-              {m.work_title({}, { locale })}
+              <MessageUI locale={locale} message={m.work_title} />
             </h2>
           </div>
           <a
@@ -52,13 +56,13 @@ export function Work() {
             data-gsap-reveal
             href="#contact"
           >
-            {m.work_view_all({}, { locale })}
+            <MessageUI locale={locale} message={m.work_view_all} />
           </a>
         </div>
 
         <div className="grid gap-5 md:grid-cols-3">
           {projects.map((project) => (
-            <WorkCard key={project.name} {...project} />
+            <WorkCard key={project.id} {...project} />
           ))}
         </div>
       </div>

@@ -1,10 +1,11 @@
 import type { LucideIcon } from 'lucide-react'
+import type { ReactNode } from 'react'
 
 interface PrincipleCardProps {
   className?: string
-  description: string
+  description: ReactNode
   icon: LucideIcon
-  title: string
+  title: ReactNode
 }
 
 export function PrincipleCard({

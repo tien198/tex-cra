@@ -3,6 +3,7 @@
 import { useRef } from 'react'
 
 import { useGsapSectionReveal } from '@/texcra-lib/GSAP/useGsapSectionReveal'
+import { MessageUI } from '@/texcra-lib/paraglide/message-ui'
 import { useLocale } from '@/texcra-lib/paraglide/useLocale'
 import * as m from '@/../paraglide/messages.js'
 
@@ -24,19 +25,19 @@ export function AboutHero() {
           className="font-alumni-sans text-primary text-2xl font-light tracking-[0.17em] uppercase"
           data-gsap-reveal
         >
-          {m.about_hero_eyebrow({}, { locale })}
+          <MessageUI locale={locale} message={m.about_hero_eyebrow} />
         </p>
         <h1
           className="font-aldrich text-[clamp(3rem,6.67vw,6rem)] leading-[1.1] tracking-[0.02em] text-accent drop-shadow-neon-heading"
           data-gsap-reveal
         >
-          {m.about_hero_title({}, { locale })}
+          <MessageUI locale={locale} message={m.about_hero_title} />
         </h1>
         <p
           className="max-w-[68rem] font-geist-mono text-lg leading-8 text-ring sm:text-xl"
           data-gsap-reveal
         >
-          {m.about_hero_description({}, { locale })}
+          <MessageUI locale={locale} message={m.about_hero_description} />
         </p>
       </div>
     </section>

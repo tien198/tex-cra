@@ -1,7 +1,9 @@
+import type { ReactNode } from 'react'
+
 interface ServiceCardProps {
-  description: string
-  number: string
-  title: string
+  description: ReactNode
+  number: ReactNode
+  title: ReactNode
 }
 
 export function ServiceCard({ description, number, title }: ServiceCardProps) {

@@ -4,9 +4,10 @@ import { useRef } from 'react'
 import { Layers3, Shield, Zap } from 'lucide-react'
 
 import { useGsapSectionReveal } from '@/texcra-lib/GSAP/useGsapSectionReveal'
+import { usePinnedScrollReveal } from '@/texcra-lib/GSAP/usePinnedScrollReveal'
+import { MessageUI } from '@/texcra-lib/paraglide/message-ui'
 import { useLocale } from '@/texcra-lib/paraglide/useLocale'
 import * as m from '@/../paraglide/messages.js'
-import { usePinnedScrollReveal } from '@/texcra-lib/GSAP/usePinnedScrollReveal'
 import { PrincipleCard } from './comps/principle-card'
 
 export function Principles() {
@@ -18,21 +19,24 @@ export function Principles() {
 
   const principles = [
     {
-      description: m.about_principle_1_description({}, { locale }),
+      description: <MessageUI locale={locale} message={m.about_principle_1_description} />,
+      id: 'velocity',
       icon: Zap,
-      title: m.about_principle_1_title({}, { locale }),
+      title: <MessageUI locale={locale} message={m.about_principle_1_title} />,
     },
     {
       className: 'opacity-50 md:opacity-100',
-      description: m.about_principle_2_description({}, { locale }),
+      description: <MessageUI locale={locale} message={m.about_principle_2_description} />,
+      id: 'integrity',
       icon: Shield,
-      title: m.about_principle_2_title({}, { locale }),
+      title: <MessageUI locale={locale} message={m.about_principle_2_title} />,
     },
     {
       className: 'opacity-50 md:opacity-100',
-      description: m.about_principle_3_description({}, { locale }),
+      description: <MessageUI locale={locale} message={m.about_principle_3_description} />,
+      id: 'depth',
       icon: Layers3,
-      title: m.about_principle_3_title({}, { locale }),
+      title: <MessageUI locale={locale} message={m.about_principle_3_title} />,
     },
   ]
 
@@ -45,19 +49,19 @@ export function Principles() {
             className="font-aldrich text-sm tracking-[0.5em] text-primary uppercase"
             data-gsap-reveal
           >
-            {m.about_principles_eyebrow({}, { locale })}
+            <MessageUI locale={locale} message={m.about_principles_eyebrow} />
           </p>
           <h2
             className="font-afacad text-[clamp(3rem,3.9vw,3.5rem)] leading-[1.05] font-semibold text-surface"
             data-gsap-reveal
           >
-            {m.about_principles_title({}, { locale })}
+            <MessageUI locale={locale} message={m.about_principles_title} />
           </h2>
           {/* <p
             className="max-w-full break-words font-geist-mono text-[0.6875rem] leading-5 text-surface"
             data-gsap-reveal
           >
-            {m.about_principles_motion_spec({}, { locale })}
+            <MessageUI locale={locale} message={m.about_principles_motion_spec} />
           </p> */}
         </div>
 
@@ -66,7 +70,7 @@ export function Principles() {
           data-pinned-reveal-items
         >
           {principles.map((principle) => (
-            <PrincipleCard key={principle.title} {...principle} />
+            <PrincipleCard key={principle.id} {...principle} />
           ))}
         </div>
       </div>
